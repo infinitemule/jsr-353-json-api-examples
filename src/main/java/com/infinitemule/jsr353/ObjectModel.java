@@ -9,19 +9,17 @@ import javax.json.JsonObject;
 public class ObjectModel {
 
 
-  public static void helloJson() {
+  public static JsonObject helloJson() {
 
-    JsonObject model = Json.createObjectBuilder()
+    return Json.createObjectBuilder()
       .add("hello", "JSON")
       .build();
 
-    System.out.println(model);
-
   }
 
-  public static void simpleModel() {
+  public static JsonObject simpleModel() {
 
-    JsonObject people = Json.createObjectBuilder()
+    return Json.createObjectBuilder()
       .add("people", Json.createArrayBuilder()
         .add(Json.createObjectBuilder()
         .add("firstName", "Jeffery")
@@ -35,9 +33,6 @@ public class ObjectModel {
         .add("firstName", "Donny")
         .add("lastName",  "Kerabatsos"))
     ).build();
-
-
-    System.out.println(people);
   }
 
   /**
@@ -45,8 +40,8 @@ public class ObjectModel {
    */
   public static void main(String[] args) {
 
-    helloJson();
-    simpleModel();
+    System.out.println(helloJson());
+    System.out.println(simpleModel());
   }
 
 }
