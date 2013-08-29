@@ -22,6 +22,7 @@ public class Generator {
 
     json.writeStartObject()
       .writeStartArray("people")
+
         .writeStartObject()
           .write("firstName", "John")
           .write("lastName",  "Alpha")
@@ -38,6 +39,29 @@ public class Generator {
             .writeEnd()
           .writeEnd()
         .writeEnd()
+
+        .writeStartObject()
+          .write("firstName", "Jane")
+          .write("lastName",  "Beta")
+          .writeStartObject("address")
+            .write("street", "47 Maple St.")
+            .write("city", "New York")
+            .write("state", "NY")
+          .writeEnd()
+          .writeStartArray("cars")
+            .writeStartObject()
+              .write("make",  "Plymouth")
+              .write("model", "Voyager")
+              .write("color", "maroon")
+            .writeEnd()
+            .writeStartObject()
+              .write("make",  "Dodge")
+              .write("model", "Omni")
+              .write("color", "blue")
+            .writeEnd()
+          .writeEnd()
+        .writeEnd()
+
       .writeEnd()
     .writeEnd()
     .close();
